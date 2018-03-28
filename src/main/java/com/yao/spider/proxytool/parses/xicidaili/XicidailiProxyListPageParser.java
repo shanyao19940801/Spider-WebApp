@@ -1,7 +1,7 @@
 package com.yao.spider.proxytool.parses.xicidaili;
 
+import com.yao.spider.douban.parsers.IPageParser;
 import com.yao.spider.proxytool.entity.Proxy;
-import com.yao.spider.proxytool.parses.ProxyListPageParser;
 import com.yao.spider.proxytool.proxyutil.ProxyConstants;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -11,11 +11,13 @@ import org.jsoup.select.Elements;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.yao.spider.proxytool.proxyutil.ProxyConstants.anonymousFlag;
+
 /**
  * Created by 单耀 on 2017/12/5.
  */
-public class XicidailiProxyListPageParser implements ProxyListPageParser {
-    public List<Proxy> parse(String html) {
+public class XicidailiProxyListPageParser implements IPageParser<Proxy> {
+    public List<Proxy> parser(String html) {
         Document document = Jsoup.parse(html);
         Elements elements = document.select("table[id=ip_list] tr[class]");
         List<Proxy> proxyList = new ArrayList<Proxy>(elements.size());

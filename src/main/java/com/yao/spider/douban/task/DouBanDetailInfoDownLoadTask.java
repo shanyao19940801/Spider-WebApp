@@ -1,14 +1,14 @@
 package com.yao.spider.douban.task;
 
+import com.yao.spider.core.factory.ParserFactory;
 import com.yao.spider.douban.DoubanHttpClient;
 import com.yao.spider.douban.dao.IMoveDao;
 import com.yao.spider.douban.dao.Impl.MoveDaoImpl;
 import com.yao.spider.douban.entity.move.Move;
-import com.yao.spider.douban.parsers.DoubanPageParser;
-import com.yao.spider.douban.parsers.DoubanParserFactory;
+import com.yao.spider.douban.parsers.IPageParser;
 import com.yao.spider.douban.parsers.move.MoveDetailInfoParser;
 import com.yao.spider.proxytool.ProxyPool;
-import com.yao.spider.proxytool.entity.Page;
+import com.yao.spider.core.entity.Page;
 import com.yao.spider.proxytool.entity.Proxy;
 import com.yao.spider.proxytool.http.util.HttpClientUtil;
 import com.yao.spider.proxytool.proxyutil.ProxyUtil;
@@ -78,7 +78,7 @@ public class DouBanDetailInfoDownLoadTask implements Runnable {
     }
 
     private void handle(Page page) {
-        DoubanPageParser parser = DoubanParserFactory.getDoubanParserFactory(MoveDetailInfoParser.class);
+        IPageParser parser = ParserFactory.getDoubanParserFactory(MoveDetailInfoParser.class);
         List<Move> list = parser.parser(page.getHtml());
         if (list != null && list.size() > 0) {
             Move _move = list.get(0);

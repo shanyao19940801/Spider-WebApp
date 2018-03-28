@@ -1,15 +1,16 @@
 package com.yao.spider.douban.task;
 
+import com.yao.spider.core.config.CommonConfig;
 import com.yao.spider.core.util.Constants;
 import com.yao.spider.douban.DoubanHttpClient;
 import com.yao.spider.douban.dao.IMoveDao;
 import com.yao.spider.douban.dao.Impl.MoveDaoImpl;
 import com.yao.spider.douban.entity.move.Move;
-import com.yao.spider.douban.parsers.DoubanPageParser;
-import com.yao.spider.douban.parsers.DoubanParserFactory;
+import com.yao.spider.douban.parsers.IPageParser;
+import com.yao.spider.core.factory.ParserFactory;
 import com.yao.spider.douban.parsers.move.MoveParser;
 import com.yao.spider.proxytool.ProxyPool;
-import com.yao.spider.proxytool.entity.Page;
+import com.yao.spider.core.entity.Page;
 import com.yao.spider.proxytool.entity.Proxy;
 import com.yao.spider.proxytool.http.util.HttpClientUtil;
 import com.yao.spider.proxytool.proxyutil.ProxyUtil;
@@ -85,7 +86,7 @@ public class DouBanInfoListPageTask implements Runnable{
 
 
     private void retry() {
-        logger.info("电影列表重试次数=" + retryTime + "--开始编号：" + startNumber + "---重试代理：" + currentProxy.getProxyStr() + "---代理失败/成功次数：" + currentProxy.getFailureTimes()+ "/" + currentProxy.getSuccessfulTimes());
+//        logger.info("电影列表重试次数=" + retryTime + "--开始编号：" + startNumber + "---重试代理：" + currentProxy.getProxyStr() + "---代理失败/成功次数：" + currentProxy.getFailureTimes()+ "/" + currentProxy.getSuccessfulTimes());
         doubanHttpClient.getDownLoadMoveListExector().execute(new DouBanInfoListPageTask(url, true, retryTime + 1, startNumber));
     }
 
@@ -93,14 +94,16 @@ public class DouBanInfoListPageTask implements Runnable{
         if (page.getHtml() == null || "".equals(page.getHtml())) {
             return;
         }
-        DoubanPageParser parser = DoubanParserFactory.getDoubanParserFactory(MoveParser.class);
+        IPageParser parser = ParserFactory.getDoubanParserFactory(MoveParser.class);
         List<Move> moveList = parser.parser(page.getHtml());
         if (moveList != null && moveList.size() > 0) {
             for (Move move : moveList) {
                 logger.info(move.toString());
             }
-            IMoveDao moveDao = new MoveDaoImpl();
-            moveDao.insertList(moveList);
+            if (CommonConfig.dbEnable) {
+                IMoveDao moveDao = new MoveDaoImpl();
+                moveDao.insertList(moveList);
+            }
         }
         //深度爬虫获取电影详细信息
         if (Constants.ISDEEP) {

@@ -2,7 +2,7 @@ package com.yao.spider.proxytool.task;
 
 import com.yao.spider.proxytool.ProxyHttpClient;
 import com.yao.spider.proxytool.ProxyPool;
-import com.yao.spider.proxytool.entity.Page;
+import com.yao.spider.core.entity.Page;
 import com.yao.spider.proxytool.entity.Proxy;
 import com.yao.spider.proxytool.http.util.HttpClientUtil;
 import com.yao.spider.proxytool.proxyutil.ProxyConstants;

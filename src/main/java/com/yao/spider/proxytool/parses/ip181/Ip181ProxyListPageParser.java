@@ -1,7 +1,7 @@
 package com.yao.spider.proxytool.parses.ip181;
 
+import com.yao.spider.douban.parsers.IPageParser;
 import com.yao.spider.proxytool.entity.Proxy;
-import com.yao.spider.proxytool.parses.ProxyListPageParser;
 import com.yao.spider.proxytool.proxyutil.ProxyConstants;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -11,11 +11,13 @@ import org.jsoup.select.Elements;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.yao.spider.proxytool.proxyutil.ProxyConstants.anonymousFlag;
+
 /**
  * Created by 单耀 on 2017/12/17.
  */
-public class Ip181ProxyListPageParser implements ProxyListPageParser {
-    public List<Proxy> parse(String content) {
+public class Ip181ProxyListPageParser implements IPageParser<Proxy> {
+    public List<Proxy> parser(String content) {
 
         Document document = Jsoup.parse(content);
         Elements elements = document.select("table tr:gt(0)");

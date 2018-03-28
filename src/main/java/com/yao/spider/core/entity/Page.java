@@ -1,4 +1,6 @@
-package com.yao.spider.proxytool.entity;
+package com.yao.spider.core.entity;
+
+import com.yao.spider.proxytool.entity.Proxy;
 
 /**
  * Created by 单耀 on 2018/1/27.

@@ -1,5 +1,6 @@
 package com.yao.douban.core.dao.Impl;
 
+import com.yao.spider.core.util.MyBatiesUtils;
 import com.yao.spider.douban.dao.IMoveDao;
 import com.yao.spider.douban.dao.Impl.MoveDaoImpl;
 import com.yao.spider.douban.entity.move.Move;
@@ -19,6 +20,7 @@ public class BaseDaoImplTest {
 
     @Test
     public void insertSelective() throws Exception {
+        MyBatiesUtils.getSqlSession();
         Move move = new Move();
         move.setId("001");
         IMoveDao dao = new MoveDaoImpl();
