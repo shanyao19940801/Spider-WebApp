@@ -2,7 +2,7 @@ package com.yao.spider.proxytool.parses.ip66;
 
 import com.yao.spider.core.parser.IPageParser;
 import com.yao.spider.proxytool.entity.Proxy;
-import com.yao.spider.proxytool.proxyutil.ProxyConstants;
+import com.yao.spider.core.constants.ProxyConstants;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

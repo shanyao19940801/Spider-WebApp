@@ -6,7 +6,7 @@ import com.yao.spider.proxytool.parses.ip66.Ip66ProxyListParser;
 import com.yao.spider.proxytool.parses.kuaidaili.KuaidailiProxyListParser;
 import com.yao.spider.proxytool.parses.mimiip.MimiipProxyListParser;
 import com.yao.spider.proxytool.parses.xicidaili.XicidailiProxyListParser;
-import com.yao.spider.proxytool.proxyutil.ProxyConstants;
+import com.yao.spider.core.constants.ProxyConstants;
 
 import java.util.HashMap;
 import java.util.HashSet;

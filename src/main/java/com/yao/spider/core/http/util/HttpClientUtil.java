@@ -1,6 +1,6 @@
 package com.yao.spider.core.http.util;
 
-import com.yao.spider.proxytool.proxyutil.ProxyConstants;
+import com.yao.spider.core.constants.ProxyConstants;
 import org.apache.http.Consts;
 import org.apache.http.HttpEntityEnclosingRequest;
 import org.apache.http.HttpHost;

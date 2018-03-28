@@ -3,7 +3,7 @@ package com.yao.spider.proxytool.parses.mimiip;
 
 import com.yao.spider.core.parser.IPageParser;
 import com.yao.spider.proxytool.entity.Proxy;
-import com.yao.spider.proxytool.proxyutil.ProxyConstants;
+import com.yao.spider.core.constants.ProxyConstants;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;

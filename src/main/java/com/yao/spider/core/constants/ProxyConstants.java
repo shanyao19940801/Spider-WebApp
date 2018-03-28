@@ -1,19 +1,18 @@
-package com.yao.spider.proxytool.proxyutil;
+package com.yao.spider.core.constants;
 
 /**
  * Created by 单耀 on 2018/1/26.
  */
 public class ProxyConstants {
-    /**
-     * 是否只需要匿名代理
-     */
+    //是否只需要匿名代理
     public static final boolean anonymousFlag = false;
     public static final String STANDARD = "standard";
     public static int SocketTimeout = 10000;
     public static int ConnectionTimeout = 10000;
     public static int TIMEOUT = 10000;
-    public static String INDEX_URL = "https://movie.douban.com";
-//    public static String INDEX_URL = "https://www.zhihu.com";
+    //代理测试地址
+    public static String PROXYTEST_URL = "https://movie.douban.com";
+
     public static final long TIME_INTERVAL = 1000;
     //文件路劲地址
     public static final String FILE_PATH= "src/main/resources/file";
