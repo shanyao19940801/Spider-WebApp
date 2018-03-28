@@ -3,8 +3,10 @@ package com.yao.spider.proxytool;
 import com.yao.spider.proxytool.entity.Proxy;
 import com.yao.spider.proxytool.parses.ip181.Ip181ProxyListParser;
 import com.yao.spider.proxytool.parses.ip66.Ip66ProxyListParser;
+import com.yao.spider.proxytool.parses.kuaidaili.KuaidailiProxyListParser;
 import com.yao.spider.proxytool.parses.mimiip.MimiipProxyListParser;
 import com.yao.spider.proxytool.parses.xicidaili.XicidailiProxyListParser;
+import com.yao.spider.proxytool.proxyutil.ProxyConstants;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -26,6 +28,12 @@ public class ProxyPool {
     public static final Map<String,Class> proxyMap = new HashMap<String, Class>();
 
     static {
+        for (int i = 1; i <= 66; i++) {
+            proxyMap.put("https://www.kuaidaili.com/free/intr/"+ i +"/", KuaidailiProxyListParser.class);
+            if (!ProxyConstants.anonymousFlag) {
+                proxyMap.put("https://www.kuaidaili.com/free/inha/" + i + "/", KuaidailiProxyListParser.class);//高匿
+            }
+        }
         int pages = 8;
         for (int i = 1; i <= pages; i++) {
             proxyMap.put("http://www.xicidaili.com/wt/" + i + ".html", XicidailiProxyListParser.class);

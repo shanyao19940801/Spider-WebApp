@@ -1,6 +1,6 @@
 package com.yao.spider.proxytool.parses.xicidaili;
 
-import com.yao.spider.douban.parsers.IPageParser;
+import com.yao.spider.core.parser.IPageParser;
 import com.yao.spider.proxytool.entity.Proxy;
 import com.yao.spider.proxytool.proxyutil.ProxyConstants;
 import org.jsoup.Jsoup;

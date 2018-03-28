@@ -1,6 +1,6 @@
 package com.yao.spider.core.factory;
 
-import com.yao.spider.douban.parsers.IPageParser;
+import com.yao.spider.core.parser.IPageParser;
 
 /**
  * Created by 单耀 on 2018/1/30.

@@ -1,6 +1,6 @@
 package com.yao.spider.proxytool.parses.kuaidaili;
 
-import com.yao.spider.douban.parsers.IPageParser;
+import com.yao.spider.core.parser.IPageParser;
 import com.yao.spider.proxytool.entity.Proxy;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

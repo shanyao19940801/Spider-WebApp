@@ -1,4 +1,4 @@
-package com.yao.spider.douban.parsers;
+package com.yao.spider.core.parser;
 
 import java.util.List;
 

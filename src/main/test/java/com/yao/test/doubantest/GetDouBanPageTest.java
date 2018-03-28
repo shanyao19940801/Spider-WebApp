@@ -2,7 +2,7 @@ package com.yao.test.doubantest;
 
 import com.yao.spider.douban.DoubanHttpClient;
 import com.yao.spider.douban.entity.move.Move;
-import com.yao.spider.douban.parsers.IPageParser;
+import com.yao.spider.core.parser.IPageParser;
 import com.yao.spider.core.factory.ParserFactory;
 import com.yao.spider.douban.parsers.move.MoveListParser;
 import com.yao.spider.proxytool.ProxyPool;

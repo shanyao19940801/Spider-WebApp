@@ -1,7 +1,7 @@
 package com.yao.spider.proxytool.task;
 
 import com.yao.spider.core.factory.ParserFactory;
-import com.yao.spider.douban.parsers.IPageParser;
+import com.yao.spider.core.parser.IPageParser;
 import com.yao.spider.proxytool.ProxyHttpClient;
 import com.yao.spider.proxytool.ProxyPool;
 import com.yao.spider.core.entity.Page;

@@ -5,7 +5,7 @@ import com.yao.spider.douban.DoubanHttpClient;
 import com.yao.spider.douban.dao.IMoveDao;
 import com.yao.spider.douban.dao.Impl.MoveDaoImpl;
 import com.yao.spider.douban.entity.move.Move;
-import com.yao.spider.douban.parsers.IPageParser;
+import com.yao.spider.core.parser.IPageParser;
 import com.yao.spider.douban.parsers.move.MoveDetailInfoParser;
 import com.yao.spider.proxytool.ProxyPool;
 import com.yao.spider.core.entity.Page;

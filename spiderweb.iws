@@ -2,46 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e61791d-71f1-47b0-bde2-60fb39e1464e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/test/java/com/yao/test/parserTest/KuaidailiProxyListParserTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com.yao/spider/log/info.log" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spiderweb.iws" afterPath="$PROJECT_DIR$/spiderweb.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/core/factory/ParserFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/core/factory/ParserFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/DoubanHttpClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/DoubanHttpClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/dao/Impl/MoveDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/dao/Impl/MoveDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/task/AbstractTask.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/task/AbstractTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/parsers/move/MoveDetailInfoParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/parsers/move/MoveDetailInfoParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/parsers/move/MoveListParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/parsers/move/MoveListParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/parsers/move/MoveParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/parsers/move/MoveParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/parsers/move/MoveParserDeprecated.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/parsers/move/MoveParserDeprecated.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/task/DouBanDetailInfoDownLoadTask.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/task/DouBanDetailInfoDownLoadTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/task/DouBanInfoListPageTask.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/task/DouBanInfoListPageTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/task/SpiderDouBanInfo.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/task/SpiderDouBanInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/ProxyHttpClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/ProxyHttpClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/ProxyPool.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/ProxyPool.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/entity/Proxy.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/entity/Proxy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/ip181/Ip181ProxyListParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/ip181/Ip181ProxyListParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/ip66/Ip66ProxyListParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/ip66/Ip66ProxyListParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/kuaidaili/KuaidailiProxyListParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/kuaidaili/KuaidailiProxyListParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/mimiip/MimiipProxyListParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/mimiip/MimiipProxyListParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/xicidaili/XicidailiProxyListParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/xicidaili/XicidailiProxyListParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/task/ProxyPageTask.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/task/ProxyPageTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/task/ProxySerializeTask.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/task/ProxySerializeTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/task/ProxyTestTask.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/task/ProxyTestTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/com/yao/douban/douban/parsers/move/MoveParserTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/com/yao/douban/douban/parsers/move/MoveParserTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/com/yao/test/doubantest/GetDouBanPageTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/com/yao/test/doubantest/GetDouBanPageTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/com/yao/test/httptest/GeHttpClientTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/com/yao/test/httptest/GeHttpClientTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/com/yao/test/parserTest/KuaidailiProxyListParserTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/com/yao/test/parserTest/KuaidailiProxyListParserTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/com/yao/test/parserTest/MoveDetailInfoParserTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/com/yao/test/parserTest/MoveDetailInfoParserTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/com/yao/test/parserTest/ParserTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/com/yao/test/parserTest/ParserTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/com/yao/test/serializable/ArraySerializable.java" afterPath="$PROJECT_DIR$/src/main/test/java/com/yao/test/serializable/ArraySerializable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/com/yao/test/serializable/ProxySerializable.java" afterPath="$PROJECT_DIR$/src/main/test/java/com/yao/test/serializable/ProxySerializable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/com/yao/test/test/ThreadRetryTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/com/yao/test/test/ThreadRetryTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/core/config/CommonConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/common/config/CommonConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/core/dao/IBaseDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/common/dao/IBaseDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/core/dao/Impl/BaseDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/common/dao/Impl/BaseDaoImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/core/util/C3P0DataSourceFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/core/factory/C3P0DataSourceFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/core/util/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/common/constants/Constants.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/http/client/AbstractHttpClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/core/http/client/AbstractHttpClient.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/http/util/HttpClientUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/core/http/util/HttpClientUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/ip181/Ip181ProxyListPageParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/ip181/Ip181ProxyListParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/ip66/Ip66ProxyListPageParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/ip66/Ip66ProxyListParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/mimiip/MimiipProxyListPageParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/mimiip/MimiipProxyListParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/xicidaili/XicidailiProxyListPageParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/xicidaili/XicidailiProxyListParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/proxyutil/MyIOutils.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/core/util/MyIOutils.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/proxyutil/ProxyUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/core/util/ProxyUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/yao/spider/douban/parsers/IPageParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/yao/spider/core/parser/IPageParser.java" />
     </list>
     <ignored path="spiderweb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,6 +68,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ProxyConstants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/proxyutil/ProxyConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="9" column="45" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Ip181ProxyListParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/ip181/Ip181ProxyListParser.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -99,24 +90,54 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KuaidailiProxyListParser.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="KuaidailiProxyListParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/kuaidaili/KuaidailiProxyListParser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
               <caret line="31" column="24" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#722#729#0" expanded="true" />
+                <element signature="e#719#726#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Proxy.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProxyPool.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/ProxyPool.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Proxy.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/entity/Proxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="61">
+              <caret line="12" column="37" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParserFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/core/factory/ParserFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="143">
+              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProxyHttpClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/ProxyHttpClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-125">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -167,7 +188,6 @@
         <option value="$PROJECT_DIR$/src/main/test/java/com/yao/test/jsontest/JsonTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/xicidaili/XicidailiProxyListPageParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/xicidaili/XicidailiProxyListParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/ProxyPool.java" />
         <option value="$PROJECT_DIR$/src/main/test/java/com/yao/test/parserTest/KuaidailiParser.java" />
         <option value="$PROJECT_DIR$/src/main/test/java/com/yao/spider/proxytool/parses/kuaidaili/KuaidailiProxyListParserTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yao/spider/core/factory/ParserFactory.java" />
@@ -178,8 +198,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/yao/spider/core/util/ProxyUtil.java" />
         <option value="$PROJECT_DIR$/src/main/test/java/com/yao/test/parserTest/KuaidailiProxyListParserTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/entity/Proxy.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/parses/kuaidaili/KuaidailiProxyListParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yao/spider/core/parser/IPageParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/ProxyPool.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/entity/Proxy.java" />
       </list>
     </option>
   </component>
@@ -579,7 +601,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="douban" />
+              <option name="myItemId" value="proxytool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parses" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kuaidaili" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -612,10 +642,6 @@
               <option name="myItemId" value="douban" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parsers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -643,15 +669,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="douban" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parsers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="move" />
+              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1187,7 +1205,7 @@
       <option name="presentableId" value="Default" />
       <updated>1522203879971</updated>
       <workItem from="1522203883801" duration="9398000" />
-      <workItem from="1522219323197" duration="1011000" />
+      <workItem from="1522219323197" duration="2059000" />
     </task>
     <servers />
   </component>
@@ -1213,13 +1231,16 @@
     <history-entry file="KuaidailiProxyListParserTest_parser - 2018.03.28 at 14h 47m 47s.xml">
       <configuration name="KuaidailiProxyListParserTest.parser" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="KuaidailiProxyListParserTest_parser - 2018.03.28 at 15h 02m 36s.xml">
+      <configuration name="KuaidailiProxyListParserTest.parser" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10409000" />
+    <option name="totallyTimeSpent" value="11457000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1235,14 +1256,14 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26500732" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26500732" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3906977" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32093024" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1269,7 +1290,7 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1278,13 +1299,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/test/java/com/yao/douban/douban/utils/DBUtilTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/douban/utils/DBUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-166">
@@ -1354,6 +1368,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
           <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1361,6 +1376,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
           <caret line="102" column="28" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1377,6 +1393,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
           <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1384,6 +1401,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1391,6 +1409,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1398,6 +1417,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1405,6 +1425,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
           <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1412,6 +1433,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="91" column="25" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1419,6 +1443,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="16" column="32" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1426,6 +1451,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-55">
           <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1442,6 +1470,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1450,6 +1479,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
           <caret line="17" column="64" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1486,14 +1516,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/core/factory/ParserFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -1543,34 +1565,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/proxyutil/ProxyConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="58" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/StartClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/ProxyPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="28" column="17" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/ProxyHttpClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1580,24 +1578,6 @@
         <state relative-caret-position="200">
           <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/douban/parsers/IPageParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/java/com/yao/test/parserTest/KuaidailiProxyListParserTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1619,10 +1599,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/entity/Proxy.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/ProxyHttpClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="-125">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/core/factory/ParserFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/core/parser/IPageParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1633,8 +1629,50 @@
           <caret line="31" column="24" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#722#729#0" expanded="true" />
+            <element signature="e#719#726#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/java/com/yao/test/parserTest/KuaidailiProxyListParserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/proxyutil/ProxyConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/util/concurrent/DelayQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/ProxyPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yao/spider/proxytool/entity/Proxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,7 +1,7 @@
 package com.yao.spider.douban.parsers.move;
 
 import com.yao.spider.douban.entity.move.Move;
-import com.yao.spider.douban.parsers.IPageParser;
+import com.yao.spider.core.parser.IPageParser;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

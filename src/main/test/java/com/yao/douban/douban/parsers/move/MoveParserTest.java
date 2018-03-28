@@ -1,7 +1,7 @@
 package com.yao.douban.douban.parsers.move;
 
 import com.yao.spider.douban.entity.move.MoveList;
-import com.yao.spider.douban.parsers.IPageParser;
+import com.yao.spider.core.parser.IPageParser;
 import com.yao.spider.core.factory.ParserFactory;
 import com.yao.spider.douban.parsers.move.MoveListParser;
 import org.junit.Test;

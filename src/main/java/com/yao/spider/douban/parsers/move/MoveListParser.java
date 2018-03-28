@@ -1,7 +1,7 @@
 package com.yao.spider.douban.parsers.move;
 
 import com.yao.spider.douban.entity.move.MoveList;
-import com.yao.spider.douban.parsers.IPageParser;
+import com.yao.spider.core.parser.IPageParser;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.slf4j.Logger;
