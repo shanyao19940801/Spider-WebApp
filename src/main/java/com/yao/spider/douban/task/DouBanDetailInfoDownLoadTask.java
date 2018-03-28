@@ -10,8 +10,8 @@ import com.yao.spider.douban.parsers.move.MoveDetailInfoParser;
 import com.yao.spider.proxytool.ProxyPool;
 import com.yao.spider.core.entity.Page;
 import com.yao.spider.proxytool.entity.Proxy;
-import com.yao.spider.proxytool.http.util.HttpClientUtil;
-import com.yao.spider.proxytool.proxyutil.ProxyUtil;
+import com.yao.spider.core.http.util.HttpClientUtil;
+import com.yao.spider.core.util.ProxyUtil;
 import org.apache.http.HttpHost;
 import org.apache.http.client.methods.HttpGet;
 import org.slf4j.Logger;
@@ -78,7 +78,7 @@ public class DouBanDetailInfoDownLoadTask implements Runnable {
     }
 
     private void handle(Page page) {
-        IPageParser parser = ParserFactory.getDoubanParserFactory(MoveDetailInfoParser.class);
+        IPageParser parser = ParserFactory.getParserClass(MoveDetailInfoParser.class);
         List<Move> list = parser.parser(page.getHtml());
         if (list != null && list.size() > 0) {
             Move _move = list.get(0);

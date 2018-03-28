@@ -3,7 +3,7 @@ package com.yao.spider.proxytool.task;
 import com.yao.spider.proxytool.ProxyHttpClient;
 import com.yao.spider.proxytool.ProxyPool;
 import com.yao.spider.proxytool.entity.Proxy;
-import com.yao.spider.proxytool.proxyutil.MyIOutils;
+import com.yao.spider.core.util.MyIOutils;
 import com.yao.spider.proxytool.proxyutil.ProxyConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

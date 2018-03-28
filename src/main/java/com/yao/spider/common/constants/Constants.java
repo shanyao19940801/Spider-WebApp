@@ -1,4 +1,4 @@
-package com.yao.spider.core.util;
+package com.yao.spider.common.constants;
 
 /**
  * Created by 单耀 on 2018/1/25.

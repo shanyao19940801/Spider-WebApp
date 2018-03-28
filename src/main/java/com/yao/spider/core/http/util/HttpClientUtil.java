@@ -1,4 +1,4 @@
-package com.yao.spider.proxytool.http.util;
+package com.yao.spider.core.http.util;
 
 import com.yao.spider.proxytool.proxyutil.ProxyConstants;
 import org.apache.http.Consts;

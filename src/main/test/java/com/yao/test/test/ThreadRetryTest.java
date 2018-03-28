@@ -1,6 +1,6 @@
 package com.yao.test.test;
 
-import com.yao.spider.proxytool.http.client.AbstractHttpClient;
+import com.yao.spider.core.http.client.AbstractHttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

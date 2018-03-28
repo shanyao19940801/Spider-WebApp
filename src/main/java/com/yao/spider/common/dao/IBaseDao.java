@@ -1,4 +1,4 @@
-package com.yao.spider.core.dao;
+package com.yao.spider.common.dao;
 
 import org.apache.ibatis.session.SqlSession;
 

@@ -1,6 +1,6 @@
-package com.yao.spider.core.dao.Impl;
+package com.yao.spider.common.dao.Impl;
 
-import com.yao.spider.core.dao.IBaseDao;
+import com.yao.spider.common.dao.IBaseDao;
 import com.yao.spider.core.util.MyBatiesUtils;
 import org.apache.ibatis.session.SqlSession;
 

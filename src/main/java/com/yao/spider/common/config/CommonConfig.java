@@ -1,4 +1,4 @@
-package com.yao.spider.core.config;
+package com.yao.spider.common.config;
 
 import java.io.IOException;
 import java.util.Properties;

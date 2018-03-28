@@ -1,5 +1,6 @@
-package com.yao.spider.proxytool.proxyutil;
+package com.yao.spider.core.util;
 
+import com.yao.spider.proxytool.proxyutil.ProxyConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

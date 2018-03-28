@@ -1,4 +1,4 @@
-package com.yao.spider.proxytool.parses.ip181;
+package com.yao.spider.proxytool.parses.ip66;
 
 import com.yao.spider.douban.parsers.IPageParser;
 import com.yao.spider.proxytool.entity.Proxy;
@@ -11,24 +11,24 @@ import org.jsoup.select.Elements;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.yao.spider.proxytool.proxyutil.ProxyConstants.anonymousFlag;
-
 /**
  * Created by 单耀 on 2017/12/17.
  */
-public class Ip181ProxyListPageParser implements IPageParser<Proxy> {
+public class Ip66ProxyListParser implements IPageParser<Proxy> {
     public List<Proxy> parser(String content) {
-
+        List<Proxy> proxyList = new ArrayList<Proxy>();
+        if (content == null || content.equals("")){
+            return proxyList;
+        }
         Document document = Jsoup.parse(content);
-        Elements elements = document.select("table tr:gt(0)");
-        List<Proxy> proxyList = new ArrayList<Proxy>(elements.size());
+        Elements elements = document.select("table tr:gt(1)");
         for (Element element : elements){
             String ip = element.select("td:eq(0)").first().text();
             String port  = element.select("td:eq(1)").first().text();
-            String isAnonymous = element.select("td:eq(2)").first().text();
-            if(!anonymousFlag || isAnonymous.contains("匿")){
-                proxyList.add(new Proxy(ip, Integer.valueOf(port), ProxyConstants.TIME_INTERVAL, "ip181"));
-            }
+            String isAnonymous = element.select("td:eq(3)").first().text();
+//            if(!anonymousFlag || isAnonymous.contains("匿")){
+            proxyList.add(new Proxy(ip, Integer.valueOf(port), ProxyConstants.TIME_INTERVAL, "ip66"));
+//            }
         }
         return proxyList;
     }

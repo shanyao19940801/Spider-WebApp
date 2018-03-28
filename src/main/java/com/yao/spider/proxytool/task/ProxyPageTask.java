@@ -6,8 +6,8 @@ import com.yao.spider.proxytool.ProxyHttpClient;
 import com.yao.spider.proxytool.ProxyPool;
 import com.yao.spider.core.entity.Page;
 import com.yao.spider.proxytool.entity.Proxy;
-import com.yao.spider.proxytool.http.util.HttpClientUtil;
-import com.yao.spider.proxytool.proxyutil.ProxyUtil;
+import com.yao.spider.core.http.util.HttpClientUtil;
+import com.yao.spider.core.util.ProxyUtil;
 import org.apache.http.HttpHost;
 import org.apache.http.client.methods.HttpGet;
 import org.slf4j.Logger;
@@ -85,7 +85,7 @@ public class ProxyPageTask implements Runnable{
         if (page.getHtml() == null || "".equals(page.getHtml())) {
             return;
         }
-        IPageParser parser = ParserFactory.getDoubanParserFactory(ProxyPool.proxyMap.get(url));
+        IPageParser parser = ParserFactory.getParserClass(ProxyPool.proxyMap.get(url));
         List<Proxy> proxyList =  parser.parser(page.getHtml());
         if (isContinueDownProxy) {
             for (Proxy proxy : proxyList) {

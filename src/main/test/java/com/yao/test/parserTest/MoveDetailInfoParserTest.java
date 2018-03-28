@@ -14,7 +14,7 @@ public class MoveDetailInfoParserTest {
     @Test
     public void parser() throws Exception {
         String url = "https://movie.douban.com/subject/26346327/";
-        IPageParser parser = ParserFactory.getDoubanParserFactory(MoveDetailInfoParser.class);
+        IPageParser parser = ParserFactory.getParserClass(MoveDetailInfoParser.class);
         Page page = DoubanHttpClient.getInstance().getPage(url);
         parser.parser(page.getHtml());
     }

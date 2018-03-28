@@ -21,7 +21,7 @@ public class ParserTest {
         String url = moves.get(0).getUrl();
         url += "?tag=%E7%83%AD%E9%97%A8&from=gaia";
         try {
-            IPageParser parser = ParserFactory.getDoubanParserFactory(MoveParserDeprecated.class);
+            IPageParser parser = ParserFactory.getParserClass(MoveParserDeprecated.class);
             Page page = DoubanHttpClient.getInstance().getPage(url);
             parser.parser(page.getHtml());
         } catch (IOException e) {
@@ -31,7 +31,7 @@ public class ParserTest {
     }
     //获取电影列表
     private static List<Move> moveListTest() {
-        IPageParser parser = ParserFactory.getDoubanParserFactory(MoveParser.class);
+        IPageParser parser = ParserFactory.getParserClass(MoveParser.class);
 //        List<MoveList> list = parser.parser("");
         try {
 //            Page page = DoubanHttpClient.getInstance().getPage(Constants.STRTY_URL_MOVE);

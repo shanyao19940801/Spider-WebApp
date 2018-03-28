@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MimiipProxyListPageParser implements IPageParser<Proxy> {
+public class MimiipProxyListParser implements IPageParser<Proxy> {
     public List<Proxy> parser(String hmtl) {
         Document document = Jsoup.parse(hmtl);
         Elements elements = document.select("table[class=list] tr");

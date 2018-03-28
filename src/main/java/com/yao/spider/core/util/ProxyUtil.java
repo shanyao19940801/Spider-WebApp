@@ -1,4 +1,4 @@
-package com.yao.spider.proxytool.proxyutil;
+package com.yao.spider.core.util;
 
 
 import com.yao.spider.proxytool.entity.Proxy;
