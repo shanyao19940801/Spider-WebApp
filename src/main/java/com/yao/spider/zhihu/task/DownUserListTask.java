@@ -9,13 +9,12 @@ import com.yao.spider.proxytool.ProxyPool;
 import com.yao.spider.proxytool.entity.Proxy;
 import com.yao.spider.zhihu.ZhiHuHttpClient;
 import com.yao.spider.zhihu.entity.User;
-import com.yao.spider.zhihu.parsers.UserParser;
+import com.yao.spider.zhihu.parsers.ZhiHuUserParser;
 import org.apache.http.HttpHost;
 import org.apache.http.client.methods.HttpGet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -64,7 +63,7 @@ public class DownUserListTask implements Runnable{
     }
 
     public void handPage(Page page) {
-        IPageParser pageParser = ParserFactory.getParserClass(UserParser.class);
+        IPageParser pageParser = ParserFactory.getParserClass(ZhiHuUserParser.class);
         List<User> list = pageParser.parser(page.getHtml());
         if (list != null && list.size() > 0) {
             for (User user : list) {
