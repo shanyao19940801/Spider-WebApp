@@ -5,6 +5,7 @@ import com.yao.spider.core.http.client.AbstractHttpClient;
 import com.yao.spider.core.util.MyIOutils;
 import com.yao.spider.core.constants.ProxyConstants;
 import com.yao.spider.proxytool.task.ProxyPageTask;
+import com.yao.spider.proxytool.task.ProxySerializeTask;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -104,6 +105,9 @@ public class ProxyHttpClient extends AbstractHttpClient {
                 }
             }
         }).start();
+
+        //序列化代理线程
+        new Thread(new ProxySerializeTask()).start();
 
     }
 

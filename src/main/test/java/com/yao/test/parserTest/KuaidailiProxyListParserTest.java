@@ -13,6 +13,12 @@ import org.junit.Test;
 public class KuaidailiProxyListParserTest{
     @Test
     public void parser() throws Exception {
+        try {
+            //每十分钟进行一次序列化
+            Thread.sleep(1000 * 5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         String url = "https://www.kuaidaili.com/free/inha/200/";
         IPageParser parser = ParserFactory.getParserClass(KuaidailiProxyListParser.class);
         Page page = DoubanHttpClient.getInstance().getPage(url);
