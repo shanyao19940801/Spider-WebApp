@@ -152,11 +152,11 @@ public class User {
     }
 
 
-    public int getFollowees() {
+    public Integer getFollowees() {
         return followees;
     }
 
-    public void setFollowees(int followees) {
+    public void setFollowees(Integer followees) {
         this.followees = followees;
     }
 
@@ -176,9 +176,6 @@ public class User {
         this.userId = userId;
     }
 
-    public void setFollowees(Integer followees) {
-        this.followees = followees;
-    }
 
     @Override
     public String toString() {

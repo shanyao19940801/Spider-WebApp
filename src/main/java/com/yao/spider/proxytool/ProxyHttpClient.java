@@ -79,10 +79,10 @@ public class ProxyHttpClient extends AbstractHttpClient {
             List<Proxy> proxyList = (List<Proxy>) MyIOutils.deserializeObject(ProxyConstants.PROXYSER_FILE_NMAE);
             if (proxyList != null) {
                 ProxyPool.proxyQueue = new DelayQueue<Proxy>(proxyList);
-                while (true) {
+               /* while (true) {
                     if (ProxyPool.proxyQueue.size() < 100)
                         break;
-                }
+                }*/
             }
         } catch (Exception e) {
         }

@@ -49,9 +49,9 @@ public class ZhiHuHttpClient extends AbstractHttpClient{
 
     public void startZhiHu() {
         String startToken = ZhiHuConfig.startUserToken;
+        logger.info("当前："+ ZhiHuConfig.authorization);
         String startUrl = String.format(ZhiHuConfig.FOLLOWEES_API, startToken, 0);
-        HttpGet request = new HttpGet(startUrl);
-        userListDownTask.execute(new ZhiHuUserListTask(startUrl, true));
+        userListDownTask.execute(new ZhiHuUserListTask(startUrl, true, startToken));
     }
 
 

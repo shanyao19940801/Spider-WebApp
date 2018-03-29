@@ -28,5 +28,6 @@
 
     <mappers>
         <mapper resource="com/yao/spider/douban/mapper/MoveMapper.xml"/>
+        <mapper resource="com/yao/spider/zhihu/mapper/UserMapper.xml"/>
     </mappers>
 </configuration>

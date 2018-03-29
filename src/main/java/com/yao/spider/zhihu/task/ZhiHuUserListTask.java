@@ -10,6 +10,8 @@ import com.yao.spider.proxytool.ProxyPool;
 import com.yao.spider.proxytool.entity.Proxy;
 import com.yao.spider.zhihu.ZhiHuHttpClient;
 import com.yao.spider.zhihu.config.ZhiHuConfig;
+import com.yao.spider.zhihu.dao.IUserDao;
+import com.yao.spider.zhihu.dao.Impl.UserDaoImpl;
 import com.yao.spider.zhihu.entity.User;
 import com.yao.spider.zhihu.parsers.ZhiHuUserParser;
 import org.apache.http.HttpHost;
@@ -29,11 +31,17 @@ public class ZhiHuUserListTask implements Runnable{
     private Proxy proxy;
     private boolean ebableProxy;
     private HttpRequestBase request;
+    private String userToken;
 
 
     public ZhiHuUserListTask(String url, boolean enableProxy) {
         this.url = url;
         this.ebableProxy = enableProxy;
+    }
+    public ZhiHuUserListTask(String url, boolean enableProxy, String userToken) {
+        this.url = url;
+        this.ebableProxy = enableProxy;
+        this.userToken = userToken;
     }
 
 
@@ -74,6 +82,9 @@ public class ZhiHuUserListTask implements Runnable{
         List<User> list = pageParser.parser(page.getHtml());
         if (list != null && list.size() > 0) {
             for (User user : list) {
+                logger.info(user.toString());
+            }
+            for (User user : list) {
                 //TODO 先查询usertoken是否已经爬过
                 if ( !ZhiHuHttpClient.getInstance().getUserListDownTask().isShutdown()) {
                     for (int i = 0; i < user.getFollowees() / 20; i++) {
@@ -81,15 +92,16 @@ public class ZhiHuUserListTask implements Runnable{
                             continue;
                         }
                         String nextUrl = String.format(ZhiHuConfig.FOLLOWEES_API, user.getUserToken(), i * 20);
-                        ZhiHuHttpClient.getInstance().getUserListDownTask().execute(new ZhiHuUserListTask(nextUrl, true));
+                        ZhiHuHttpClient.getInstance().getUserListDownTask().execute(new ZhiHuUserListTask(nextUrl, true, user.getUserToken()));
                     }
                 }
                 // TODO 将usertoken保存到数据库，避免大量重复查询
-                logger.info(user.toString());
+
             }
             if (CommonConfig.dbEnable) {
+                IUserDao dao = new UserDaoImpl();
                 for (User user : list) {
-
+                    dao.inserSelective(user);
                 }
             }
 
@@ -97,6 +109,7 @@ public class ZhiHuUserListTask implements Runnable{
     }
 
     public void retry() {
-        ZhiHuHttpClient.getInstance().getUserListDownTask().execute(new ZhiHuUserListTask(this.url, true));
+        logger.info("重试" + this.userToken);
+        ZhiHuHttpClient.getInstance().getUserListDownTask().execute(new ZhiHuUserListTask(this.url, true, this.userToken));
     }
 }
