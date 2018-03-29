@@ -33,7 +33,7 @@ public class ZhiHuUserListTask implements Runnable{
     private HttpRequestBase request;
     private String userToken;
     //同一个token重试次数记录，如果超过五次就放弃不在重试
-    private int retryTimes = 1;
+    private int retryTimes;
 
 
     public ZhiHuUserListTask(String url, boolean enableProxy) {
