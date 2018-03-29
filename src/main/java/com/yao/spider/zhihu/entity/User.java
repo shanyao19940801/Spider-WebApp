@@ -1,42 +1,58 @@
 package com.yao.spider.zhihu.entity;
 
+/**
+ * 知乎用户资料
+ */
 public class User {
-    private String userToken;
-
-    private String location;
-
-    private String business;
-
-    private String sex;
-
-    private String employment;
-
-    private String education;
-
+    //用户名
     private String username;
-
+    //user token
+    private String userToken;
+    //位置
+    private String location;
+    //行业
+    private String business;
+    //性别
+    private String sex;
+    //企业
+    private String employment;
+    //企业职位
+    private String position;
+    //教育
+    private String education;
+    //用户首页url
     private String url;
-
-    private Integer agrees;
-
-    private Integer thanks;
-
-    private Integer asks;
-
-    private Integer answers;
-
-    private Integer posts;
-
+    //答案赞同数
+    private int agrees;
+    //感谢数
+    private int thanks;
+    //提问数
+    private int asks;
+    //回答数
+    private int answers;
+    //文章数
+    private int posts;
+    //关注人数
     private Integer followees;
+    //粉丝数量
+    private int followers;
+    // hashId 用户唯一标识
+    private String userId;
 
-    private Integer followers;
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public String getUserToken() {
         return userToken;
     }
 
     public void setUserToken(String userToken) {
-        this.userToken = userToken == null ? null : userToken.trim();
+        this.userToken = userToken;
     }
 
     public String getLocation() {
@@ -44,7 +60,7 @@ public class User {
     }
 
     public void setLocation(String location) {
-        this.location = location == null ? null : location.trim();
+        this.location = location;
     }
 
     public String getBusiness() {
@@ -52,7 +68,7 @@ public class User {
     }
 
     public void setBusiness(String business) {
-        this.business = business == null ? null : business.trim();
+        this.business = business;
     }
 
     public String getSex() {
@@ -60,7 +76,7 @@ public class User {
     }
 
     public void setSex(String sex) {
-        this.sex = sex == null ? null : sex.trim();
+        this.sex = sex;
     }
 
     public String getEmployment() {
@@ -68,7 +84,15 @@ public class User {
     }
 
     public void setEmployment(String employment) {
-        this.employment = employment == null ? null : employment.trim();
+        this.employment = employment;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public String getEducation() {
@@ -76,15 +100,7 @@ public class User {
     }
 
     public void setEducation(String education) {
-        this.education = education == null ? null : education.trim();
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+        this.education = education;
     }
 
     public String getUrl() {
@@ -92,75 +108,88 @@ public class User {
     }
 
     public void setUrl(String url) {
-        this.url = url == null ? null : url.trim();
+        this.url = url;
     }
 
-    public Integer getAgrees() {
+    public int getAgrees() {
         return agrees;
     }
 
-    public void setAgrees(Integer agrees) {
+    public void setAgrees(int agrees) {
         this.agrees = agrees;
     }
 
-    public Integer getThanks() {
+    public int getThanks() {
         return thanks;
     }
 
-    public void setThanks(Integer thanks) {
+    public void setThanks(int thanks) {
         this.thanks = thanks;
     }
 
-    public Integer getAsks() {
+    public int getAsks() {
         return asks;
     }
 
-    public void setAsks(Integer asks) {
+    public void setAsks(int asks) {
         this.asks = asks;
     }
 
-    public Integer getAnswers() {
+    public int getAnswers() {
         return answers;
     }
 
-    public void setAnswers(Integer answers) {
+    public void setAnswers(int answers) {
         this.answers = answers;
     }
 
-    public Integer getPosts() {
+    public int getPosts() {
         return posts;
     }
 
-    public void setPosts(Integer posts) {
+    public void setPosts(int posts) {
         this.posts = posts;
     }
 
-    public Integer getFollowees() {
+    public int getFollowees() {
         return followees;
+    }
+
+    public void setFollowees(int followees) {
+        this.followees = followees;
+    }
+
+    public int getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(int followers) {
+        this.followers = followers;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public void setFollowees(Integer followees) {
         this.followees = followees;
     }
 
-    public Integer getFollowers() {
-        return followers;
-    }
-
-    public void setFollowers(Integer followers) {
-        this.followers = followers;
-    }
-
     @Override
     public String toString() {
         return "User{" +
-                "userToken='" + userToken + '\'' +
+                "username='" + username + '\'' +
+                ", userToken='" + userToken + '\'' +
                 ", location='" + location + '\'' +
                 ", business='" + business + '\'' +
                 ", sex='" + sex + '\'' +
                 ", employment='" + employment + '\'' +
+                ", position='" + position + '\'' +
                 ", education='" + education + '\'' +
-                ", username='" + username + '\'' +
                 ", url='" + url + '\'' +
                 ", agrees=" + agrees +
                 ", thanks=" + thanks +
@@ -169,6 +198,7 @@ public class User {
                 ", posts=" + posts +
                 ", followees=" + followees +
                 ", followers=" + followers +
+                ", hashId='" + userId + '\'' +
                 '}';
     }
 }

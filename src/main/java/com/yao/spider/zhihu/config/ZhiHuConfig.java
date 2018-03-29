@@ -8,21 +8,24 @@ import java.util.Properties;
  */
 public class ZhiHuConfig {
     public static String startURL;
-    public static String FOLLOWEES_API;
+//    public static String FOLLOWEES_API;
     public static String startUserToken;
 
-    public final static String USER_FOLLOWEES_URL = "https://www.zhihu.com/api/v4/members/%s/followees?" +
-            "include=data[*].educations,employments,answer_count,business,locations,articles_count,follower_count," +
-            "gender,following_count,question_count,voteup_count,thanked_count,is_followed,is_following," +
-            "badge[?(type=best_answerer)].topics&offset=%d&limit=20";
+//    public final static String USER_FOLLOWEES_URL = "https://www.zhihu.com/api/v4/members/%s/followees?include=data[*].answer_count,articles_count,gender,follower_count,is_followed,is_following,badge[?(type=best_answerer)].topics&offset=%d&limit=20";
+    public final static String FOLLOWEES_API = "https://www.zhihu.com/api/v4/members/%s/followees?" +
+        "include=data[*].educations,employments,answer_count,business,locations,articles_count,follower_count," +
+        "gender,following_count,question_count,voteup_count,thanked_count,is_followed,is_following," +
+        "badge[?(type=best_answerer)].topics&offset=%d&limit=20";
+    public static String authorization;
 
     static {
         Properties p = new Properties();
         try {
             p.load(ZhiHuConfig.class.getResourceAsStream("/config/zhihu-config.properties"));
             startURL = p.getProperty("startURL");
-            FOLLOWEES_API = p.getProperty("FOLLOWEES_API");
+//            FOLLOWEES_API = p.getProperty("FOLLOWEES_API");
             startUserToken = p.getProperty("startUserToken");
+            authorization = p.getProperty("authorization");
         } catch (IOException e) {
             e.printStackTrace();
         }
