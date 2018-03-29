@@ -79,16 +79,12 @@ public class ProxyHttpClient extends AbstractHttpClient {
             List<Proxy> proxyList = (List<Proxy>) MyIOutils.deserializeObject(ProxyConstants.PROXYSER_FILE_NMAE);
             if (proxyList != null) {
                 ProxyPool.proxyQueue = new DelayQueue<Proxy>(proxyList);
-               /* while (true) {
-                    if (ProxyPool.proxyQueue.size() < 100)
-                        break;
-                }*/
             }
         } catch (Exception e) {
         }
-        new Thread(new Runnable() {
+        /*new Thread(new Runnable() {
             public void run() {
-                while(isContinue) {
+//                while(isContinue) {
                     for (String url : ProxyPool.proxyMap.keySet()) {
                         proxyDoloadThreadExector.execute(new ProxyPageTask(url, false));
                         try {
@@ -102,12 +98,12 @@ public class ProxyHttpClient extends AbstractHttpClient {
                     } catch (InterruptedException e) {
                         logger.error(e.getMessage(), e);
                     }
-                }
+//                }
             }
         }).start();
 
         //序列化代理线程
-        new Thread(new ProxySerializeTask()).start();
+        new Thread(new ProxySerializeTask()).start();*/
 
     }
 

@@ -32,6 +32,8 @@ public class ZhiHuUserListTask implements Runnable{
     private boolean ebableProxy;
     private HttpRequestBase request;
     private String userToken;
+    //同一个token重试次数记录，如果超过五次就放弃不在重试
+    private int retryTimes = 1;
 
 
     public ZhiHuUserListTask(String url, boolean enableProxy) {
@@ -42,6 +44,13 @@ public class ZhiHuUserListTask implements Runnable{
         this.url = url;
         this.ebableProxy = enableProxy;
         this.userToken = userToken;
+    }
+
+    public ZhiHuUserListTask(String url, boolean enableProxy, String userToken, int retryTimes) {
+        this.url = url;
+        this.ebableProxy = enableProxy;
+        this.userToken = userToken;
+        this.retryTimes = retryTimes;
     }
 
 
@@ -109,7 +118,9 @@ public class ZhiHuUserListTask implements Runnable{
     }
 
     public void retry() {
-        logger.info("重试" + this.userToken);
-        ZhiHuHttpClient.getInstance().getUserListDownTask().execute(new ZhiHuUserListTask(this.url, true, this.userToken));
+        logger.info("重试" + this.userToken + "---重试次数：" + retryTimes);
+        if (retryTimes < 5) {
+            ZhiHuHttpClient.getInstance().getUserListDownTask().execute(new ZhiHuUserListTask(this.url, true, this.userToken, this.retryTimes + 1));
+        }
     }
 }
