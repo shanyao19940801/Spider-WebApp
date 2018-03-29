@@ -1,5 +1,6 @@
 package com.yao.spider.zhihu.task;
 
+import com.yao.spider.common.config.CommonConfig;
 import com.yao.spider.core.entity.Page;
 import com.yao.spider.core.factory.ParserFactory;
 import com.yao.spider.core.http.util.HttpClientUtil;
@@ -8,10 +9,12 @@ import com.yao.spider.core.util.ProxyUtil;
 import com.yao.spider.proxytool.ProxyPool;
 import com.yao.spider.proxytool.entity.Proxy;
 import com.yao.spider.zhihu.ZhiHuHttpClient;
+import com.yao.spider.zhihu.config.ZhiHuConfig;
 import com.yao.spider.zhihu.entity.User;
 import com.yao.spider.zhihu.parsers.ZhiHuUserParser;
 import org.apache.http.HttpHost;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpRequestBase;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,19 +23,23 @@ import java.util.List;
 /**
  * Created by user on 2018/3/28.
  */
-public class DownUserListTask implements Runnable{
-    private static final Logger logger = LoggerFactory.getLogger(DownUserListTask.class);
+public class ZhiHuUserListTask implements Runnable{
+    private static final Logger logger = LoggerFactory.getLogger(ZhiHuUserListTask.class);
     private String url;
     private Proxy proxy;
     private boolean ebableProxy;
+    private HttpRequestBase request;
 
-    public DownUserListTask(String url,boolean enableProxy) {
+
+    public ZhiHuUserListTask(String url, boolean enableProxy) {
         this.url = url;
         this.ebableProxy = enableProxy;
     }
 
+
     public void run() {
         HttpGet request = new HttpGet(url);
+        request.setHeader("authorization","oauth " + ZhiHuConfig.authorization);
         Page page = null;
         try {
             if (ebableProxy) {
@@ -67,12 +74,29 @@ public class DownUserListTask implements Runnable{
         List<User> list = pageParser.parser(page.getHtml());
         if (list != null && list.size() > 0) {
             for (User user : list) {
+                //TODO 先查询usertoken是否已经爬过
+                if ( !ZhiHuHttpClient.getInstance().getUserListDownTask().isShutdown()) {
+                    for (int i = 0; i < user.getFollowees() / 20; i++) {
+                        if (ZhiHuHttpClient.getInstance().getUserListDownTask().getQueue().size() > 888) {
+                            continue;
+                        }
+                        String nextUrl = String.format(ZhiHuConfig.FOLLOWEES_API, user.getUserToken(), i * 20);
+                        ZhiHuHttpClient.getInstance().getUserListDownTask().execute(new ZhiHuUserListTask(nextUrl, true));
+                    }
+                }
+                // TODO 将usertoken保存到数据库，避免大量重复查询
                 logger.info(user.toString());
             }
+            if (CommonConfig.dbEnable) {
+                for (User user : list) {
+
+                }
+            }
+
         }
     }
 
     public void retry() {
-        ZhiHuHttpClient.getInstance().getUserListDownTask().execute(new DownUserListTask(this.url, true));
+        ZhiHuHttpClient.getInstance().getUserListDownTask().execute(new ZhiHuUserListTask(this.url, true));
     }
 }
