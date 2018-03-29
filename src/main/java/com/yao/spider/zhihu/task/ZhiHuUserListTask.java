@@ -118,8 +118,8 @@ public class ZhiHuUserListTask implements Runnable{
     }
 
     public void retry() {
-        logger.info("重试" + this.userToken + "---重试次数：" + retryTimes);
-        if (retryTimes < 5) {
+        logger.info("重试" + this.userToken + "---重试次数：" + retryTimes + "---代理：" + proxy.getProxyStr());
+        if (retryTimes < 5 || ZhiHuConfig.startUserToken.equals(this.userToken)) {
             ZhiHuHttpClient.getInstance().getUserListDownTask().execute(new ZhiHuUserListTask(this.url, true, this.userToken, this.retryTimes + 1));
         }
     }
