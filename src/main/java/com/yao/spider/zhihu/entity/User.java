@@ -15,7 +15,7 @@ public class User {
     //性别
     private String sex;
     //企业
-    private String employment;
+    private String company;
     //企业职位
     private String position;
     //教育
@@ -31,7 +31,7 @@ public class User {
     //回答数
     private int answers;
     //文章数
-    private int posts;
+    private int articles;
     //关注人数
     private Integer followees;
     //粉丝数量
@@ -79,12 +79,12 @@ public class User {
         this.sex = sex;
     }
 
-    public String getEmployment() {
-        return employment;
+    public String getCompany() {
+        return company;
     }
 
-    public void setEmployment(String employment) {
-        this.employment = employment;
+    public void setCompany(String company) {
+        this.company = company;
     }
 
     public String getPosition() {
@@ -143,13 +143,14 @@ public class User {
         this.answers = answers;
     }
 
-    public int getPosts() {
-        return posts;
+    public int getArticles() {
+        return articles;
     }
 
-    public void setPosts(int posts) {
-        this.posts = posts;
+    public void setArticles(int articles) {
+        this.articles = articles;
     }
+
 
     public int getFollowees() {
         return followees;
@@ -187,7 +188,7 @@ public class User {
                 ", location='" + location + '\'' +
                 ", business='" + business + '\'' +
                 ", sex='" + sex + '\'' +
-                ", employment='" + employment + '\'' +
+                ", employment='" + company + '\'' +
                 ", position='" + position + '\'' +
                 ", education='" + education + '\'' +
                 ", url='" + url + '\'' +
@@ -195,7 +196,7 @@ public class User {
                 ", thanks=" + thanks +
                 ", asks=" + asks +
                 ", answers=" + answers +
-                ", posts=" + posts +
+                ", posts=" + articles +
                 ", followees=" + followees +
                 ", followers=" + followers +
                 ", hashId='" + userId + '\'' +
