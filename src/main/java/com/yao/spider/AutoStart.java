@@ -4,6 +4,8 @@ import com.yao.spider.common.config.CommonConfig;
 import com.yao.spider.douban.DoubanHttpClient;
 import com.yao.spider.proxytool.ProxyHttpClient;
 import com.yao.spider.zhihu.ZhiHuHttpClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -12,9 +14,9 @@ import javax.servlet.ServletContextListener;
  * Created by shanyao on 2018/3/29.
  */
 public class AutoStart implements ServletContextListener {
+    private static Logger logger = LoggerFactory.getLogger(AutoStart.class);
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         ProxyHttpClient.getInstance().startProxy();
-//        DoubanHttpClient.getInstance().startDouBan();
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {

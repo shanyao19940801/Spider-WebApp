@@ -82,28 +82,31 @@ public class ProxyHttpClient extends AbstractHttpClient {
             }
         } catch (Exception e) {
         }
-        /*new Thread(new Runnable() {
-            public void run() {
+        //是否爬取新的代理
+        if (ProxyConstants.ISUSERFILE_ONLY) {
+            new Thread(new Runnable() {
+                public void run() {
 //                while(isContinue) {
                     for (String url : ProxyPool.proxyMap.keySet()) {
                         proxyDoloadThreadExector.execute(new ProxyPageTask(url, false));
                         try {
                             Thread.sleep(5000);
                         } catch (InterruptedException e) {
-                            logger.error(e.getMessage(),e);
+                            logger.error(e.getMessage(), e);
                         }
                     }
                     try {
-                        Thread.sleep(1000*60*60);
+                        Thread.sleep(1000 * 60 * 60);
                     } catch (InterruptedException e) {
                         logger.error(e.getMessage(), e);
                     }
 //                }
-            }
-        }).start();
+                }
+            }).start();
 
-        //序列化代理线程
-        new Thread(new ProxySerializeTask()).start();*/
+            //序列化代理线程
+            new Thread(new ProxySerializeTask()).start();
+        }
 
     }
 
