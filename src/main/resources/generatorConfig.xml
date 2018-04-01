@@ -16,8 +16,8 @@
 
         <!-- 数据库连接 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://122.112.245.251:3306/douban"
-                        userId="shanyao"
+                        connectionURL="jdbc:mysql://localhost:3306/spider"
+                        userId="root"
                         password="shanyao">
         </jdbcConnection>
 
@@ -26,23 +26,23 @@
         </javaTypeResolver>
 
         <!-- 数据表对应的model层  -->
-        <javaModelGenerator targetPackage="com.yao.douban.douban.entity" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.yao.spider.zhihu.entity" targetProject="src/main/java">
             <property name="enableSubPackages" value="false" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
         <!-- sql mapper 映射配置文件 -->
-        <sqlMapGenerator targetPackage="com.yao.douban.douban.mapper"  targetProject="src/main/java">
+        <sqlMapGenerator targetPackage="com.yao.spider.zhihu.mapper"  targetProject="src/main/java">
             <property name="enableSubPackages" value="false" />
         </sqlMapGenerator>
 
         <!-- mybatis3中的mapper接口 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.yao.douban.douban.dao"  targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.yao.spider.zhihu.dao"  targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
         <!-- 数据表进行生成操作 schema:相当于库名; tableName:表名; domainObjectName:对应的DO -->
-        <table schema="douban" tableName="move" domainObjectName="Move"
+        <table schema="zhihu" tableName="usertoken" domainObjectName="UserToken"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">

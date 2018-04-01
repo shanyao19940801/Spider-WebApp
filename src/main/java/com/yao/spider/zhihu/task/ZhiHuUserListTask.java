@@ -58,6 +58,7 @@ public class ZhiHuUserListTask implements Runnable{
         HttpGet request = new HttpGet(url);
         request.setHeader("authorization","oauth " + ZhiHuConfig.authorization);
         Page page = null;
+        long requestTime = System.currentTimeMillis();
         try {
             if (ebableProxy) {
                 logger.info("当前可用代理:" + ProxyPool.proxyQueue.size());
@@ -69,8 +70,10 @@ public class ZhiHuUserListTask implements Runnable{
                 page = ZhiHuHttpClient.getInstance().getPage(this.url);
             }
             if (page != null && page.getStatusCode() == 200) {
+                logger.info("Request SuccessFully：" + (requestTime - System.currentTimeMillis())/1000 + "s");
                 handPage(page);
             } else {
+                logger.info("Request failly：" + (System.currentTimeMillis() - requestTime)/1000 + "s");
                 this.proxy.setFailureTimes(proxy.getFailureTimes() + 1);
                 retry();
             }
@@ -95,10 +98,12 @@ public class ZhiHuUserListTask implements Runnable{
                 logger.info(user.toString());
             }
             if (CommonConfig.dbEnable) {
+                long saveTime = System.currentTimeMillis();
                 IUserDao dao = new UserDaoImpl();
                 for (User user : list) {
                     dao.inserSelective(user);
                 }
+                logger.info("保存到数据库花费时间：" + (System.currentTimeMillis() - saveTime)/1000 + "秒");
             }
             for (User user : list) {
                 //TODO 先查询usertoken是否已经爬过
