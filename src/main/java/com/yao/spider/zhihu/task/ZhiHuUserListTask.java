@@ -60,6 +60,7 @@ public class ZhiHuUserListTask implements Runnable{
         Page page = null;
         try {
             if (ebableProxy) {
+                logger.info("当前可用代理:" + ProxyPool.proxyQueue.size());
                 proxy = ProxyPool.proxyQueue.take();
                 HttpHost host = new HttpHost(this.proxy.getIp(),this.proxy.getPort());
                 request.setConfig(HttpClientUtil.getRequestConfigBuilder().setProxy(host).build());
@@ -93,13 +94,26 @@ public class ZhiHuUserListTask implements Runnable{
             for (User user : list) {
                 logger.info(user.toString());
             }
+            if (CommonConfig.dbEnable) {
+                IUserDao dao = new UserDaoImpl();
+                for (User user : list) {
+                    dao.inserSelective(user);
+                }
+            }
             for (User user : list) {
                 //TODO 先查询usertoken是否已经爬过
                 if ( !ZhiHuHttpClient.getInstance().getUserListDownTask().isShutdown()) {
                     for (int i = 0; i < user.getFollowees() / 20; i++) {
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                         if (ZhiHuHttpClient.getInstance().getUserListDownTask().getQueue().size() > 888) {
+//                            logger.info("线程数量较多:"+ ZhiHuHttpClient.getInstance().getUserListDownTask().getQueue().size());
                             continue;
                         }
+                        logger.info("当前活跃线程数：" + ZhiHuHttpClient.getInstance().getUserListDownTask().getActiveCount());
                         String nextUrl = String.format(ZhiHuConfig.FOLLOWEES_API, user.getUserToken(), i * 20);
                         ZhiHuHttpClient.getInstance().getUserListDownTask().execute(new ZhiHuUserListTask(nextUrl, true, user.getUserToken()));
                     }
@@ -107,17 +121,12 @@ public class ZhiHuUserListTask implements Runnable{
                 // TODO 将usertoken保存到数据库，避免大量重复查询
 
             }
-            if (CommonConfig.dbEnable) {
-                IUserDao dao = new UserDaoImpl();
-                for (User user : list) {
-                    dao.inserSelective(user);
-                }
-            }
 
         }
     }
 
     public void retry() {
+        logger.info("当前活跃线程数：" + ZhiHuHttpClient.getInstance().getUserListDownTask().getActiveCount());
         logger.info("重试" + this.userToken + "---重试次数：" + retryTimes + "---代理：" + proxy.getProxyStr());
         if (retryTimes < 5 || ZhiHuConfig.startUserToken.equals(this.userToken)) {
             ZhiHuHttpClient.getInstance().getUserListDownTask().execute(new ZhiHuUserListTask(this.url, true, this.userToken, this.retryTimes + 1));

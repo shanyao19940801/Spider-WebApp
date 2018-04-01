@@ -1,5 +1,6 @@
 package com.yao.spider.proxytool;
 
+import com.yao.spider.core.util.MyIOutils;
 import com.yao.spider.proxytool.entity.Proxy;
 import com.yao.spider.proxytool.parses.ip181.Ip181ProxyListParser;
 import com.yao.spider.proxytool.parses.ip66.Ip66ProxyListParser;
@@ -8,10 +9,7 @@ import com.yao.spider.proxytool.parses.mimiip.MimiipProxyListParser;
 import com.yao.spider.proxytool.parses.xicidaili.XicidailiProxyListParser;
 import com.yao.spider.core.constants.ProxyConstants;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.DelayQueue;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -28,6 +26,15 @@ public class ProxyPool {
     public static final Map<String,Class> proxyMap = new HashMap<String, Class>();
 
     static {
+        try {
+            //先将文件中代理反序列化
+            List<Proxy> proxyList = (List<Proxy>) MyIOutils.deserializeObject(ProxyConstants.PROXYSER_FILE_NMAE);
+            if (proxyList != null) {
+                ProxyPool.proxyQueue = new DelayQueue<Proxy>(proxyList);
+            }
+        } catch (Exception e) {
+        }
+
         for (int i = 1; i <= 66; i++) {
             proxyMap.put("https://www.kuaidaili.com/free/intr/"+ i +"/", KuaidailiProxyListParser.class);
             if (!ProxyConstants.anonymousFlag) {
