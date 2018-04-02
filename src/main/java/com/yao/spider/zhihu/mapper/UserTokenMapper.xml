@@ -4,6 +4,14 @@
   <resultMap id="BaseResultMap" type="com.yao.spider.zhihu.entity.UserToken">
     <id column="user_token" jdbcType="VARCHAR" property="userToken" />
   </resultMap>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from user
+    where user_token = #{userToken,jdbcType=VARCHAR}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from usertoken
     where user_token = #{userToken,jdbcType=VARCHAR}

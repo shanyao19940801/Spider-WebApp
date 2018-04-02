@@ -8,4 +8,6 @@ public interface UserTokenMapper {
     int insert(UserToken record);
 
     int insertSelective(UserToken record);
+
+    UserToken selectByPrimaryKey(String userToken);
 }

@@ -120,6 +120,11 @@ public class ZhiHuUserListTask implements Runnable{
                         }
                         logger.info("当前活跃线程数：" + ZhiHuHttpClient.getInstance().getUserListDownTask().getActiveCount());
                         String nextUrl = String.format(ZhiHuConfig.FOLLOWEES_API, user.getUserToken(), i * 20);
+                        try {
+                            Thread.sleep(5000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                         ZhiHuHttpClient.getInstance().getUserListDownTask().execute(new ZhiHuUserListTask(nextUrl, true, user.getUserToken()));
                     }
                 }
