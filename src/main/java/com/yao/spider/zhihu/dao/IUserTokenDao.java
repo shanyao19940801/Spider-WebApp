@@ -9,4 +9,6 @@ public interface IUserTokenDao {
     void insertSelective(UserToken userToken);
 
     public UserToken selectByPrimaryKey(String userToken);
+
+    boolean judgeAndInsert(UserToken userToken);
 }

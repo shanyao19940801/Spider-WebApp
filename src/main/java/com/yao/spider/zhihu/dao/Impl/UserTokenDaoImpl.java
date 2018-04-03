@@ -40,4 +40,24 @@ public class UserTokenDaoImpl implements IUserTokenDao {
         }
         return token;
     }
+
+    public boolean judgeAndInsert(UserToken userToken) {
+        SqlSession session = MyBatiesUtils.getSqlSession();
+        UserToken token = new UserToken();
+        try {
+            UserTokenMapper mapper = session.getMapper(UserTokenMapper.class);
+            if (mapper.selectByPrimaryKey(userToken.getUserToken()) == null) {
+                mapper.insertSelective(userToken);
+                session.commit();
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+
+        } finally {
+            session.close();
+        }
+        return true;
+    }
 }
