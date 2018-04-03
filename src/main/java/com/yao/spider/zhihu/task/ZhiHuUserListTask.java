@@ -115,12 +115,14 @@ public class ZhiHuUserListTask implements Runnable{
                     // TODO 将usertoken保存到数据库，避免大量重复查询
 
                 }
+                long dbstart = System.currentTimeMillis();
                 if (CommonConfig.dbEnable) {
                     IUserDao dao = new UserDaoImpl();
                     for (int i = 0; i < listSize; i ++) {
                         dao.inserSelective(list.get(i));
                     }
                 }
+                logger.info("保存到数据库消耗时间："+ (dbstart - System.currentTimeMillis())/ 1000);
 
             }
         }

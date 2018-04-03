@@ -5,8 +5,13 @@ package com.yao.test.test;
  */
 public class Main {
     public static void main(String[] args) {
-//        new Thread(new ChuShiHuaTest(1)).start();
-        ThreadRetryTest.getInstance().startDouBan();
+        long s = System.currentTimeMillis();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(System.currentTimeMillis() - s);
     }
 
 }
