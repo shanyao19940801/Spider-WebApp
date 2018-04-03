@@ -106,7 +106,7 @@ public class ZhiHuUserListTask implements Runnable{
                 IUserTokenDao userTokenDao = new UserTokenDaoImpl();
                 for (int i = 0; i < listSize; i++) {
                     user = list.get(i);
-                    //TODO 先查询usertoken是否已经爬过
+                    // 先查询usertoken是否已经爬过
                     if (userTokenDao.judgeAndInsert(new UserToken(user.getUserToken()))) {
                         if (!ZhiHuHttpClient.getInstance().getUserListDownTask().isShutdown()) {
                             for (int j = 0, len = user.getFollowees(); j < len / 20; j++) {
