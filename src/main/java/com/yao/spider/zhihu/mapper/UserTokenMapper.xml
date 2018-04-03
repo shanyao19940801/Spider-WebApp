@@ -5,10 +5,14 @@
     <id column="user_token" jdbcType="VARCHAR" property="userToken" />
   </resultMap>
 
+  <sql id="Base_Column_List" >
+    user_token
+  </sql>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select
     <include refid="Base_Column_List" />
-    from user
+    from usertoken
     where user_token = #{userToken,jdbcType=VARCHAR}
   </select>
 

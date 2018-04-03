@@ -18,7 +18,7 @@
                 <property name="idleConnectionTestPeriod" value="30"/>
                 <property name="initialPoolSize" value="100"/>
                 <property name="maxIdleTime" value="30"/>
-                <property name="maxPoolSize" value="100"/>
+                <property name="maxPoolSize" value="200"/>
                 <property name="minPoolSize" value="10"/>
                 <property name="maxStatements" value="200"/>
             </dataSource>
@@ -29,5 +29,6 @@
     <mappers>
         <mapper resource="com/yao/spider/douban/mapper/MoveMapper.xml"/>
         <mapper resource="com/yao/spider/zhihu/mapper/UserMapper.xml"/>
+        <mapper resource="com/yao/spider/zhihu/mapper/UserTokenMapper.xml"/>
     </mappers>
 </configuration>

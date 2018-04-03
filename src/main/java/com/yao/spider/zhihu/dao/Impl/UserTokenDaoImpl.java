@@ -54,7 +54,7 @@ public class UserTokenDaoImpl implements IUserTokenDao {
                 return false;
             }
         } catch (Exception e) {
-
+            e.printStackTrace();
         } finally {
             session.close();
         }
